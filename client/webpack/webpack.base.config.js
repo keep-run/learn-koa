@@ -1,5 +1,5 @@
 const utils = require('./utils')
-const path=require('path')
+const path = require('path')
 // 参考文章：https://www.jianshu.com/p/04e436cf75ba
 
 module.exports = {
@@ -16,6 +16,11 @@ module.exports = {
     // 模块
     module: {
         rules: [
+            {
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/
+            },
             {
                 test: /\.(js|jsx)$/,//一个匹配loaders所处理的文件的拓展名的正则表达式，这里用来匹配js和jsx文件（必须）
                 exclude: /node_modules/,//屏蔽不需要处理的文件（文件夹）（可选）
@@ -65,7 +70,7 @@ module.exports = {
         ]
     },
     resolve: {
-        extensions: ['.js', '.json'], // 解析扩展。（当我们通过路导入文件，找不到改文件时，会尝试加入这些后缀继续寻找文件）
+        extensions: ['.ts', '.tsx', '.js', '.json'], // 解析扩展。（当我们通过路导入文件，找不到改文件时，会尝试加入这些后缀继续寻找文件）
         alias: {
             '@': path.join(__dirname, '..', "src") // 在项目中使用@符号代替src路径，导入文件路径更方便
         }
