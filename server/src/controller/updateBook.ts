@@ -4,13 +4,8 @@ import {Book} from '../entity/book'
 
 export default async (ctx:Context)=>{
   const repository=getManager().getRepository(Book)   //获取book实体库
-  
-  const newBook=repository.create({
-    name:'C++程序设计',
-    author:'未知',
-    price:23,
-    press:'机械工业出版社'
-  })
-  await repository.insert(newBook)
-  ctx.body=newBook
+  //更新指定id的 price
+  const {id,price}=ctx.query
+  await repository.update(id, { price});
+  ctx.body='success'
 }

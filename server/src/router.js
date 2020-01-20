@@ -24,6 +24,7 @@
 import getAllBooks from './controller/getAllBooks'
 import addBook from './controller/addBook'
 import getBook from './controller/getBook'
+import updateBook from './controller/updateBook'
 export const AppRoute = [{
     path: '/getAllBooks',
     method: 'get',
@@ -32,6 +33,10 @@ export const AppRoute = [{
     path: '/getBook',
     method: 'get',
     action: getBook
+},{
+    path: '/updateBook',
+    method: 'get',
+    action: updateBook
 },{
     path: '/addBook',
     method: 'get',
