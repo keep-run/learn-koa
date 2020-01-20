@@ -5,7 +5,7 @@ const config = {
   
     // 数据库配置
     database: {
-      DATABASE: 'demo2',
+      DATABASE: 'demo',
       USERNAME: 'root',
       PASSWORD: 'root',
       PORT: '3306',
