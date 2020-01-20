@@ -22,8 +22,18 @@
 // }
 
 import getAllBooks from './controller/getAllBooks'
-export const AppRoute=[{
-    path:'/getAllBooks',
-    method:'get',
-     action:getAllBooks
+import addBook from './controller/addBook'
+import getBook from './controller/getBook'
+export const AppRoute = [{
+    path: '/getAllBooks',
+    method: 'get',
+    action: getAllBooks
+},{
+    path: '/getBook',
+    method: 'get',
+    action: getBook
+},{
+    path: '/addBook',
+    method: 'get',
+    action: addBook  
 }]
