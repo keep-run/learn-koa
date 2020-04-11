@@ -45,6 +45,13 @@ export default function() {
 
     console.log("-------end--------");
   };
-  test();
+  // test();
+  const Demo=(a)=>{
+    // this.b=a
+    console.log('-----------this-----------',this)
+    return {a:a}
+  }
+const demo=new Demo(5)
+console.log('-------demo--------',demo)
   return <div>event-Loop 测试</div>;
 }
