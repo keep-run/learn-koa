@@ -1,11 +1,13 @@
 const utils = require('./utils')
 const path = require('path')
+const MiniCssExtractPlugin=require('mini-css-extract-plugin')
+// import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 // 参考文章：https://www.jianshu.com/p/04e436cf75ba
 
 module.exports = {
     // 入口
     entry: {
-        app: "./src/index"
+        app: "./src/test.css"
     },
     // 出口
     output: {
@@ -28,15 +30,20 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: [
-                    {
-                        loader: 'style-loader', // 创建 <style></style>
-                    },
-                    {
-                        loader: 'css-loader',  // 转换css
-                    }
-                ]
-            },
+                // exclude: /node_modules/,
+                use: [MiniCssExtractPlugin.loader, 'css-loader'],
+              },
+            // {
+            //     test: /\.css$/,
+            //     use: [
+            //         {
+            //             loader: 'style-loader', // 创建 <style></style>
+            //         },
+            //         {
+            //             loader: 'css-loader',  // 转换css
+            //         }
+            //     ]
+            // },
             {
                 test: /\.less$/,
                 use: [
@@ -70,9 +77,13 @@ module.exports = {
         ]
     },
     resolve: {
-        extensions: ['.ts', '.tsx', '.js', '.json'], // 解析扩展。（当我们通过路导入文件，找不到改文件时，会尝试加入这些后缀继续寻找文件）
+        extensions: ['.ts', '.jsx','.tsx', '.js', '.json'], // 解析扩展。（当我们通过路导入文件，找不到改文件时，会尝试加入这些后缀继续寻找文件）
         alias: {
             '@': path.join(__dirname, '..', "src") // 在项目中使用@符号代替src路径，导入文件路径更方便
         }
-    }
+    },
+
+    plugins: [new MiniCssExtractPlugin({
+        filename: `/css/[name].[hash].css`,
+      })]
 }

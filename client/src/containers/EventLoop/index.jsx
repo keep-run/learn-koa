@@ -3,7 +3,12 @@ import React from "react";
 export default function() {
   const test1 = () => {
     console.log("------test1-------");
-    return 2
+    return new Promise(reslove=>{
+      console.log("------test1 promise-------")
+      reslove()
+    }).then(res=>{
+      console.log("------test1 promise  then-------")
+    })
   };
 
   const test = async() => {
@@ -19,20 +24,20 @@ export default function() {
       console.log("------await promise--------");
     })
 
-    new Promise(reslove => {
-      console.log("------promise--------");
-      reslove();
-    })
-      .then(() => {
-        console.log("------then1--------");
-      })
-      .then(() => {
-        console.log("------then2--------");
-      });
+    // new Promise(reslove => {
+    //   console.log("------promise--------");
+    //   reslove();
+    // })
+    //   .then(() => {
+    //     console.log("------then1--------");
+    //   })
+    //   .then(() => {
+    //     console.log("------then2--------");
+    //   });
 
-    Promise.resolve().then(res => {
-      console.log("------then3--------");
-    });
+    // Promise.resolve().then(res => {
+    //   console.log("------then3--------");
+    // });
 
     new Promise(reslove => {
       setTimeout(() => {
@@ -45,13 +50,13 @@ export default function() {
 
     console.log("-------end--------");
   };
-  // test();
-  const Demo=(a)=>{
-    // this.b=a
-    console.log('-----------this-----------',this)
-    return {a:a}
-  }
-const demo=new Demo(5)
-console.log('-------demo--------',demo)
+  test();
+//   const Demo=(a)=>{
+//     // this.b=a
+//     console.log('-----------this-----------',this)
+//     return {a:a}
+//   }
+// const demo=new Demo(5)
+// console.log('-------demo--------',demo)
   return <div>event-Loop 测试</div>;
 }
