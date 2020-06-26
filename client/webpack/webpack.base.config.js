@@ -7,7 +7,7 @@ const MiniCssExtractPlugin=require('mini-css-extract-plugin')
 module.exports = {
     // 入口
     entry: {
-        app: "./src/test.css"
+        app: "./src/index"
     },
     // 出口
     output: {
@@ -84,6 +84,6 @@ module.exports = {
     },
 
     plugins: [new MiniCssExtractPlugin({
-        filename: `/css/[name].[hash].css`,
+        filename: `css/[name].[hash].css`,
       })]
 }

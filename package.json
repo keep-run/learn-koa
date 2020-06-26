@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/plugin-proposal-class-properties": "^7.10.1"
+  },
+  "dependencies": {
+    "@babel/plugin-transform-arrow-functions": "^7.10.1"
+  }
+}

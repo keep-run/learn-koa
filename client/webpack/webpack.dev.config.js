@@ -23,6 +23,7 @@ module.exports = webpackMerge(baseWebpackConfig,{
         compress: true, // 一切服务都启用gzip 压缩：
         port: "8008", // 指定端口
         publicPath: "/", // 访问资源加前缀
+        host:'127.0.0.1',
         proxy: {
             // 接口请求代理
         },

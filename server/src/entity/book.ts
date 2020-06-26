@@ -1,9 +1,10 @@
-import {Entity, PrimaryGeneratedColumn, Column} from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
 
 @Entity()
 
 // 定义数据库表结构
-export class Book{
+// export class Book{
+ class Book {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -19,3 +20,5 @@ export class Book{
   @Column()
   press: string;
 }
+export {Book as Book}
+// export Book

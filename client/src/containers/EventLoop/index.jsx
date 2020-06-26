@@ -1,6 +1,15 @@
 import React from "react";
+import Demo from './classTest'
 
-export default function() {
+
+export default function(props) {
+
+  // class Demo {
+  //   static print(args){
+  //    console.log('-----args--------',args)
+  //   }
+  // }
+
   const test1 = () => {
     console.log("------test1-------");
     return new Promise(reslove=>{
@@ -58,5 +67,12 @@ export default function() {
 //   }
 // const demo=new Demo(5)
 // console.log('-------demo--------',demo)
-  return <div>event-Loop 测试</div>;
+
+// console.log('111111111111',demo)
+let demo=Demo
+  return <div>
+    <div>event-Loop 测试</div>
+    <button onClick={()=>Demo.print('1234567890')}>test class</button>
+    <button onClick={()=>{props.history.push({pathname:'./hooktest'})}}>go </button>
+    </div>;
 }
