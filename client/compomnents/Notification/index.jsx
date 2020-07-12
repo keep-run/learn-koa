@@ -72,7 +72,8 @@ Notification.reWrite = function (properities) {
   return {
     notice(noticeProps) {
       notification.add(noticeProps)
-    }
+    },
+    
     removeNotice(key){
       notification.remove(key)
     },
