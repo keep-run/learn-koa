@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-
+import Toast from '../../../compomnents/Toast/index'
 export default class extends PureComponent {
     state={
         data:[0,1,2,3,4,5]
@@ -9,6 +9,8 @@ export default class extends PureComponent {
         const {data}=this.state
         data.unshift(-1)
         this.setState({data:[...data]})
+        Toast.show('test')
+        // console.log(Toast.show('test'))
     }
     render() {
         const {data}=this.state

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
 import Notice from '../Notice/index'
 let counts = 0
 //生成唯一的key
@@ -46,7 +47,7 @@ class Notification extends Component {
   //生成tosat的dom节点
   getNoticeDOM() {
     const { notices } = this.state
-    return notices.map(item => <Notice key={item.key} onClose={this.closeCallBack} />)
+    return notices.map(item => <Notice key={item.key} onClose={()=>this.closeCallBack(item)} data={item} />)
   }
 
   //获取蒙层的dom
@@ -68,7 +69,7 @@ Notification.reWrite = function (properities) {
   const { ...props } = properities || {}
   let div = document.createElement('div')
   document.body.appendChild(div)
-  const notification = ReactDOM.render(<Notification {...props} />, div)
+  const notification =ReactDOM.render(<Notification {...props} />, div)
   return {
     notice(noticeProps) {
       notification.add(noticeProps)

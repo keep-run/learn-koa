@@ -20,19 +20,19 @@ export default class extends Component {
     this.clearCloseTimer()
   }
 
-  clearCloseTimer() {
+  clearCloseTimer=()=> {
     clearTimeout(this.closeTimer)
     this.closeTimer = null
   }
 
   //关闭组件: 1、先清除定时器；2、开启关闭动画；3、等待动画结束，执行回调
-  close() {
+  close=()=> {
     const _this = this
-    this.clearCloseTimer()
-    this.setState({ shouldClose: true })
-    this.timer = setTimeout(() => {
-      if (this.props.onClose) {
-        this.props.onClose()
+    _this.clearCloseTimer()
+    _this.setState({ shouldClose: true })
+    _this.timer = setTimeout(() => {
+      if (_this.props.onClose) {
+        _this.props.onClose()
       }
       clearTimeout(_this.timer)
     }, 300)
@@ -41,7 +41,7 @@ export default class extends Component {
   render(){
     const {shouldClose}=this.state
     return (<div className='notice-content leave'>
-      {this.props.content}
+      {this.props.data.content}
     </div>)
   }
 }

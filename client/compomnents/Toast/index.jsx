@@ -8,7 +8,7 @@ import classNames from 'classnames'
 let newNotification
 const getNewNotification = () => {
   if (!newNotification) {
-    newNotification = Notification.rewrite()
+    newNotification = Notification.reWrite()
   }
   return newNotification
 }
