@@ -59,6 +59,20 @@ module.exports = {
                 ],
             },
             {
+                test: /\.styl$/,
+                use: [
+                    {
+                        loader: 'style-loader',
+                    },
+                    {
+                        loader: 'css-loader',
+                    },
+                    {
+                        loader: 'stylus-loader', // 编译 stylus -> CSS
+                    },
+                ],
+            },
+            {
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
                 loader: 'url-loader',
                 options: {

@@ -1,7 +1,7 @@
 import React from 'react'
 //注意要install @types/react-router-dom和react-router-dom，两个缺一不可
 import { BrowserRouter, Route, Switch } from 'react-router-dom'  
-import Demo1 from '@/containers/demo1/index'
+import Demo1 from '@/containers/demo1/index.jsx'
 import TouchDemo from '@/containers/touchDemo/index.jsx'
 import Demo3 from '@/containers/demo3/index.jsx'
 import HookTest from '@/containers/hookTest/index.jsx'

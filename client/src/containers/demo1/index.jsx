@@ -9,7 +9,8 @@ export default class extends PureComponent {
         const {data}=this.state
         data.unshift(-1)
         this.setState({data:[...data]})
-        Toast.show('test')
+        // Toast.success('test')
+        Toast.success('test')
         // console.log(Toast.show('test'))
     }
     render() {
@@ -17,7 +18,7 @@ export default class extends PureComponent {
         return (<div>
             <button onClick={this.handleClick}>click</button>
             {data.map((item,index)=>{
-                if(index===2){
+                if(item===3){
                 return <div key={index}>div {item}</div>
                 }
             return <span key={index}>span {item}</span>

@@ -13,7 +13,7 @@ const getNewNotification = () => {
   return newNotification
 }
 
-const notice = (content, type, icon, duration = 3000, onClose, mask = true) => {
+const notice = (content, type, icon, duration = 30000, onClose, mask = true) => {
   let notificationInstance = getNewNotification();
   notificationInstance.notice({
     duration,
@@ -35,6 +35,9 @@ const notice = (content, type, icon, duration = 3000, onClose, mask = true) => {
 export default {
   show(content, duration, icon, mask, onClose) {
     return notice(content, undefined, icon, duration, onClose, mask)
+  },
+  success(content, duration, icon, mask, onClose){
+    return notice(content, 'success', icon, duration, onClose, mask)
   },
   hide(){
     if(newNotification){

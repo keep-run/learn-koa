@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import Notice from '../Notice/index'
+import './index.styl'
 let counts = 0
 //生成唯一的key
 const getKey = () => {

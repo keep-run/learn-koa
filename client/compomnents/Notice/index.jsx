@@ -35,7 +35,7 @@ export default class extends Component {
         _this.props.onClose()
       }
       clearTimeout(_this.timer)
-    }, 300)
+    }, 300000)
   }
 
   render(){
