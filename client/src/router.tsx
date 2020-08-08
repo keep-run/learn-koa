@@ -7,6 +7,7 @@ import Demo3 from '@/containers/demo3/index.jsx'
 import HookTest from '@/containers/hookTest/index.jsx'
 import EventLoop from '@/containers/EventLoop/index.jsx'
 import List from '@/containers/ListDemo/index.jsx'
+import FlexDemo from '@/containers/FlexDemo/index.jsx'
 // import TouchDemo from '@/containers/ListDemo/index.jsx'
 export default (
   <BrowserRouter>
@@ -16,5 +17,6 @@ export default (
     <Route path='/hooktest' component={HookTest}/>
     <Route path='/event/loop' component={EventLoop}/>
     <Route path='/list' component={List}/>
+    <Route path='/flexdemo' component={FlexDemo}/>
   </BrowserRouter>
 )
